@@ -7,7 +7,6 @@
 ```
 starter-hackathon-project/
 ├── README.md            
-├── devpost/             ← 🏆 how to submit on Devpost + write-up template
 ├── prototype/           ← The only setup required is changing the model or inserting your own gemini api key
 ```
 # Project PAIDA, Puffles Artificial Intelligence Diet Assistant
