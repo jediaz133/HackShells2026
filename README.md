@@ -1,5 +1,5 @@
 <h1 align="center">HackShells Hackathon 2026</h1>
-<h3 align="center"><em>A Automatic Diet Assistant</em></h3>
+<h3 align="center"><em>An Automatic Diet Assistant</em></h3>
 
 
 ## Repository Map
