@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Helps</title>
+    <link rel="stylesheet" href="static/main.css">
+    </head>
+</head>
+<body>
+    <h1>Welcome, back </h1>
+    <h3>How are you doing? 
+    <br> Enter details about your day, or ask questions about meals.</h3>
+    
+    <div class="textField">
+    <form enctype="multipart/form-data" action="/" method="post" style="width: 70vw; display:flex; align-items: center; justify-content: center; gap: 1vw;">
+        <label for="image" class="imageUpload" style="width: 4vh; height: 4vh;">
+        <img id="preview" src="{{ url_for('static', filename='cam.png') }}" alt="Upload an image">
+        </label>
+        <input type="file" id="image" name="image" accept="image/*" hidden>        <!-- <input class="cam" type="file" value="image" id="image" accept="image/*" src="" onclick="uploadFiles()"">  -->
+        <input type="text" id="requestForAI" name="requestForAI" style="width:55vw; height: 5vh; border:0; outline:0; outline:none!important; background-color: wheat; padding-top: 0;">
+    </form> 
+    </div>
+    <div class="AIResponse">
+    <p id="response" style="white-space: pre-wrap; font-family: 'Roboto', sans-serif;">Loading...</p>
+</div>
+
+<script>
+
+function uploadFiles() {
+  const input = document.getElementById('fileInput');
+  const files = input.files;
+
+  if (!files.length) {
+    displayMessage('No files selected.', 'red');
+    return;
+  }
+
+  const formData = new FormData();
+  for (let file of files) {
+    formData.append('upload[]', file);
+  }
+
+  // CSRF token simulation
+  formData.append('csrf_token', generateToken());
+
+  fetch('/', {
+    method: 'POST',
+    body: formData,
+  })}
+
+
+
+async function loadAIResponse() {
+    const output = document.getElementById("response");
+
+    try {
+        const response = await fetch("{{ url_for('aiResponse') }}");
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+
+        output.textContent = "";
+
+
+        // while loop that grabs the data and decodes it 
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) {
+                break;
+            }
+            
+            const chunk = decoder.decode(value, { stream: true });
+            output.textContent += chunk+"\n";
+
+        }
+
+        // Decode any remaining bytes
+        output.textContent += decoder.decode()+"\n";
+
+    } catch (error) {
+        output.textContent = "";
+        console.error(error);
+    }
+}
+
+loadAIResponse();
+</script>
+</div>
+</body>

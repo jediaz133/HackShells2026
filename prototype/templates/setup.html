@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Helps</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/main.css">
+    
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Welcome!</h1>
+            <h3>It looks like it's your first time with us.<br>Please enter your information so that we can best start you on your journey of health.</h3>
+        </div>
+
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" name="weight">
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age">
+            </div>
+        
+            <div class="form-group">
+                <label for="height">Choose height:</label>
+                <select id="height" name="height">
+                    <option value="4ft 3inch">4'3</option>
+                    <option value="4ft 4inch">4'4</option>
+                    <option value="4ft 5inch">4'5</option>
+                    <option value="4ft 6inch">4'6</option>
+                    <option value="4ft 7inch">4'7</option>
+                    <option value="4ft 8inch">4'8</option>
+                    <option value="4ft 9inch">4'9</option>
+                    <option value="4ft 10inch">4'10</option>
+                    <option value="4ft 11inch">4'11</option>
+
+                    <option value="5ft 0inch">5'0</option>
+                    <option value="5ft 1inch">5'1</option>
+                    <option value="5ft 2inch">5'2</option>
+                    <option value="5ft 3inch">5'3</option>
+                    <option value="5ft 4inch">5'4</option>
+                    <option value="5ft 5inch">5'5</option>
+                    <option value="5ft 6inch">5'6</option>
+                    <option value="5ft 7inch">5'7</option>
+                    <option value="5ft 8inch">5'8</option>
+                    <option value="5ft 9inch">5'9</option>
+                    <option value="5ft 10inch">5'10</option>
+                    <option value="5ft 11inch">5'11</option>
+
+                    <option value="6ft 0inch">6'0</option>
+                    <option value="6ft 1inch">6'1</option>
+                    <option value="6ft 2inch">6'2</option>
+                    <option value="6ft 3inch">6'3</option>
+                    <option value="6ft 4inch">6'4</option>
+                    <option value="6ft 5inch">6'5</option>
+                    <option value="6ft 6inch">6'6</option>
+                    <option value="6ft 7inch">6'7</option>
+                    <option value="6ft 8inch">6'8</option>
+                    <option value="6ft 9inch">6'9</option>
+                    <option value="6ft 10inch">6'10</option>
+                    <option value="6ft 11inch">6'11</option>
+
+                    <option value="7ft 0inch">7'0</option>
+                    <option value="7ft 1inch">7'1</option>
+                    <option value="7ft 2inch">7'2</option>
+                    <option value="7ft 3inch">7'3</option>
+                </select>
+            </div>
+       
+            <div class="form-group">
+                <label>Sex:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="male" name="sex" value="1">
+                        <label for="male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="sex" value="0">
+                        <label for="female">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Other" name="sex" value="2">
+                        <label for="Other">Other</label>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="wpw">Workouts Per Week:</label>
+                <select id="wpw" name="wpw">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="workoutTime">Workout Time (Minutes):</label>
+                <input type="number" id="workoutTime" name="workoutTime">
+            </div>
+
+            <div class="form-group">
+                <label for="extra">Extra useful information:</label>
+                <input type="text" id="extra" name="extra" placeholder="e.g., injuries, dietary restrictions">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
