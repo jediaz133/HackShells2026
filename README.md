@@ -17,3 +17,5 @@ starter-hackathon-project/
 
 **Why not use a diet app?:** I've personally found them to be intimidating and I don't know where the data is going. Those diet apps also store data on you and this keeps everything local if you want (exception is this example uses Gemini with langchain however it takes one line to swap to an ollama mode)
 single classmate had done the same thing. Studying tools shouldn't take longer than studying."*
+
+** Usage:** The only setup required is changing the model or inserting your own gemini api key.
