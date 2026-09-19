@@ -34,7 +34,7 @@ def home():
         if request.method == "POST":
             image = request.files.get('image')
 
-            if not os.path.isfile("image.jpg"):
+            if image is None:
                 None
             else:
                 image.save("image.jpg")
